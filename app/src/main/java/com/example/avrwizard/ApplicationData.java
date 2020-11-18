@@ -11,3 +11,4 @@ public class ApplicationData extends Application{
 
     public boolean getWizard_info() { return wizard_info; }
 }
+

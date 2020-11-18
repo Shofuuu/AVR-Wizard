@@ -1,6 +1,7 @@
 package com.example.avrwizard;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
 public class selectedNewbie extends AppCompatActivity {

@@ -4,17 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/bgcolor">
+    android:background="@color/bgcolor"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/avrwizard_wave" />
+
+    <Button
+        android:id="@+id/btnAdvanced"
+        android:layout_width="347dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/stroke_rect"
+        android:text="Nah, I'm advanced on this"
+        android:textAllCaps="false"
+        android:textColor="@color/fgtext"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHelpMe" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="283dp"
-        android:layout_height="282dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="318dp"
+        android:layout_height="317dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/avrwizard" />
+
+    <Button
+        android:id="@+id/btnHelpMe"
+        android:layout_width="286dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="88dp"
+        android:background="@drawable/rounded_rect"
+        android:text="Help Me!"
+        android:textAllCaps="false"
+        android:textColor="@color/fgtext"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
