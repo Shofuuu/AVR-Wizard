@@ -4,7 +4,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,38 +16,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ApplicationData data = (ApplicationData) getApplicationContext();
-
-
-        data.setWizard_info(true);
-    }
-
-    private void alert_info(){
-        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
-
-        alertBuilder.setTitle("AVR Wizard Information");
-
-        alertBuilder.setMessage("Lorem ipsum dolor sit amet, consectetur\n" +
-                "adipiscing elit, sed do eiusmod tempor\n" +
-                "incididunt ut labore et dolore magna aliqua.\n" +
-                "Ut enim ad minim veniam, quis nostrud\n" +
-                "exercitation ullamco laboris nisi ut aliquip\n" +
-                "ex ea commodo consequat.")
-        .setIcon(R.mipmap.ic_launcher)
-        .setCancelable(false)
-        .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog,int id) {
-                // jika tombol diklik, maka akan menutup activity ini
-                MainActivity.this.finish();
+        Button btnHelpMe = (Button) findViewById(R.id.btnHelpMe);
+        btnHelpMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openNewbieActivity();
             }
-        })
-        .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // jika tombol ini diklik, akan menutup dialog
-                // dan tidak terjadi apa2
-                dialog.cancel();
+        });
+
+        Button btnAdvanced = (Button) findViewById(R.id.btnAdvanced);
+        btnAdvanced.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openAdvancedActivity();
             }
         });
     }
 
+    private void openNewbieActivity(){
+        Intent intent = new Intent(this, selectedNewbie.class);
+        startActivity(intent);
+    }
+
+    private void openAdvancedActivity(){
+        Intent intent = new Intent(this, selectedAdvanced.class);
+        startActivity(intent);
+    }
 }
