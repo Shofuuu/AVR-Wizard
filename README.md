@@ -1,2 +1,7 @@
 # AVR-Wizard Tugas Kuliah Piranti Bergerak
-update mukhlis
+File JSON :
+- atmega328P
+- atmega8A
+- atmega128A
+- attiny85
+- atmega32A
