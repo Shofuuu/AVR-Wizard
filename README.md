@@ -5,3 +5,6 @@ File JSON :
 - atmega128A
 - attiny85
 - atmega32A
+
+Download GitHub Desktop :
+https://central.github.com/deployments/desktop/desktop/latest/win32
