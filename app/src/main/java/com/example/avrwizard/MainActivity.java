@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openAdvancedActivity(){
-        Intent intent = new Intent(this, selectedAdvanced.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, selectedAdvanced.class);
+//        startActivity(intent);
     }
 }

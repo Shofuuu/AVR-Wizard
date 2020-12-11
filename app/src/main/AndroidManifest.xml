@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".selectedAdvanced"></activity>
+        <activity android:name=".newBoardOrIC"></activity>
         <activity android:name=".selectedNewbie" />
         <activity android:name=".MainActivity">
             <intent-filter>
