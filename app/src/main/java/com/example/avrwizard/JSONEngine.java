@@ -10,7 +10,7 @@ import java.io.InputStream;
 
 public class JSONEngine extends AppCompatActivity {
     String json;
-    String IC;
+
     public String loadJSONFromAsset() {
         try {
             InputStream is = getAssets().open("microchip_data.json");
@@ -27,7 +27,7 @@ public class JSONEngine extends AppCompatActivity {
     }
 
 
-    public Object setIC (String IC){
+    public void setIC (String IC){
         loadJSONFromAsset();
         try {
             JSONObject obj = new JSONObject(json);
@@ -35,12 +35,11 @@ public class JSONEngine extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        this.IC = "IC";
     }
-     public String getIC (){
-        return this.IC;
+     public void getIC (){
+
      }
 
 
-    }
 }
+
