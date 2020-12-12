@@ -2,6 +2,7 @@ package com.example.avrwizard;
 
 import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
@@ -41,6 +42,15 @@ public class JSONEngine extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public String getFlash(){
+        try {
+            setIC(data.getString(0));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return getFlash();
     }
 
 
