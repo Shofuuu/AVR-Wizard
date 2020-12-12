@@ -33,23 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 openNewbieActivity();
             }
         });
-
-        Button btnAdvanced = (Button) findViewById(R.id.btnAdvanced);
-        btnAdvanced.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openAdvancedActivity();
-            }
-        });
     }
 
     private void openNewbieActivity(){
         Intent intent = new Intent(this, selectedNewbie.class);
         startActivity(intent);
-    }
-
-    private void openAdvancedActivity(){
-//        Intent intent = new Intent(this, selectedAdvanced.class);
-//        startActivity(intent);
     }
 }

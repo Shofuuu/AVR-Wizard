@@ -24,12 +24,13 @@
         android:layout_marginLeft="36dp"
         android:layout_marginTop="12dp"
         android:text="Frequency"
+        android:textColor="@color/fgtext"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerboardname" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/spinnerfreq"
         android:layout_width="338dp"
         android:layout_height="51dp"
         android:layout_marginTop="96dp"
@@ -45,13 +46,14 @@
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="40dp"
+        android:textColor="@color/fgtext"
         android:text="Select your board or IC"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerboardname"
         android:layout_width="338dp"
         android:layout_height="51dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,19 +62,19 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textboarddescription"
         android:layout_width="339dp"
         android:layout_height="331dp"
         android:layout_marginTop="64dp"
-        android:gravity="center"
         android:text="TextView"
+        android:textColor="@color/fgtext"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerfreq" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btngenerate"
         android:layout_width="186dp"
         android:layout_height="58dp"
         android:layout_marginTop="28dp"
@@ -83,6 +85,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textboarddescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
