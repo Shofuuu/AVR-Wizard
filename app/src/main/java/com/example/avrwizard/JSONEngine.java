@@ -1,16 +1,15 @@
 package com.example.avrwizard;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 
 public class JSONEngine extends AppCompatActivity {
-    String json;
 
+    private String json;
+    JSONArray data;
     public String loadJSONFromAsset() {
         try {
             InputStream is = getAssets().open("microchip_data.json");
@@ -31,14 +30,19 @@ public class JSONEngine extends AppCompatActivity {
         loadJSONFromAsset();
         try {
             JSONObject obj = new JSONObject(json);
-            JSONArray data = obj.getJSONArray(IC);
+            data = obj.getJSONArray(IC);
+            for (int i = 0; i<data.length(); i++){
+                JSONObject data_in = data.getJSONObject(i);
+                String flash = (String) data_in.get("flash");
+                String eeprom = (String) data_in.get("eeprom");
+                String sram = (String) data_in.get("sram");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-     public void getIC (){
 
-     }
+    }
+
 
 
 }
