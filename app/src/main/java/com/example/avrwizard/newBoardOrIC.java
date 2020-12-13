@@ -36,7 +36,11 @@ public class newBoardOrIC extends AppCompatActivity {
         JSONEngine json = (JSONEngine) getApplicationContext();
         json.setICName("atmega328p");
 
-        txtboarddescription.setText(json.getICName() + " flash size : " + json.getFlash());
+        txtboarddescription.setText(
+                json.getICName() + " flash size : " + json.getFlash() + "\n" +
+                json.getICName() + " eeprom size : " + json.getEeprom() + "\n" +
+                json.getICName() + " sram size : " + json.getSram() + "\n"
+        );
     }
 
     private void openegeneratedcode(){
