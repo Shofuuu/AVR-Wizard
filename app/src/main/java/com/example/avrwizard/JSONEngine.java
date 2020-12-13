@@ -14,7 +14,7 @@ public class JSONEngine extends Application {
     private String ic_name;
     JSONArray data;
     JSONArray efuse;
-    public String loadJSONFromAsset() {
+    public void loadJSONFromAsset() {
         try {
             InputStream is = getAssets().open("microchip_data.json");
             int size = is.available();
@@ -24,11 +24,8 @@ public class JSONEngine extends Application {
             json = new String(buffer, "UTF-8");
         } catch (IOException ex) {
             ex.printStackTrace();
-            return null;
         }
-        return null;
     }
-
 
     public void setIC (String IC){
         loadJSONFromAsset();
@@ -39,20 +36,22 @@ public class JSONEngine extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-    public String getIc_name(){
+
+    public String getICName(){
         return ic_name;
     }
+
     public String getFlash() {
        String tmp = "";
         try {
-            tmp = data.getString(0);
+            tmp = Integer.toString(data.getInt(0));
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return tmp;
     }
+
     public String getSram(){
         String tmp = "";
         try {
@@ -62,6 +61,7 @@ public class JSONEngine extends Application {
         }
         return tmp;
     }
+
     public String getEeprom(){
         String tmp = "";
         try {

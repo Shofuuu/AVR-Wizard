@@ -1,8 +1,8 @@
 {
 	"atmega328p": {
-		"flash": "32",
-		"sram": "1",
-		"eeprom" : "1",
+		"flash": 32,
+		"sram": 1,
+		"eeprom" : 1,
 		"efuse" : {
 			"0" : ["BODLEVEL0", "Brown-out detector trigger level", 1],
 			"1" : ["BODLEVEL0", "Brown-out detector trigger level", 1],
