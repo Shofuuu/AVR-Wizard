@@ -18,15 +18,13 @@ public class JSONEngine extends Application {
         String raw_json = null;
 
         try {
-            InputStream is = getAssets().open("microchip_data.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
+            InputStream inputStream = getAssets().open("microchip_data.json");
+            int size_stream = inputStream.available();
+            byte[] buff_stream = new byte[size_stream];
+            inputStream.read(buff_stream);
+            raw_json = new String(buff_stream);
         } catch (IOException ex) {
             ex.printStackTrace();
-            return null;
         }
 
         return raw_json;
@@ -51,12 +49,13 @@ public class JSONEngine extends Application {
     }
 
     public String getFlash() {
-       String tmp = "";
-        try {
-            tmp = data.getString("flash");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+       String tmp = loadJSONFromAsset();
+//        try {
+//            JSONObject json_obj = new JSONObject();
+//            JSONObject tmp_obj = data.getString("flash");
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
         return tmp;
     }
 
