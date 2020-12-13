@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class selectedNewbie extends AppCompatActivity {
+public class selectMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selected_newbie);
+        setContentView(R.layout.activity_select_menu);
 
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
@@ -31,8 +31,34 @@ public class selectedNewbie extends AppCompatActivity {
                 openfusecalc();
             }
         });
+        Button btnNewIC = (Button) findViewById(R.id.btnNewIc);
+        btnNewIC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                opennewic();
+            }
+        });
+        Button btnGenerateCode = (Button) findViewById(R.id.btnGenerateCode);
+        btnGenerateCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                opengeneratecode();
+            }
+        });
     }
 
     private void openfusecalc(){
+        Intent intent = new Intent(this, FuseCalculator.class);
+        startActivity(intent);
+    }
+
+    private void opennewic(){
+        Intent intent = new Intent(this,newBoardOrIC.class);
+        startActivity(intent);
+    }
+
+    private void opengeneratecode(){
+        Intent intent = new Intent(this, GenerateCode.class);
+        startActivity(intent);
     }
 }

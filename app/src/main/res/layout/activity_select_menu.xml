@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgcolor"
-    tools:context=".selectedNewbie">
+    tools:context=".selectMenu">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -63,7 +63,7 @@
         android:textColor="@color/fgtext"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGenerate" />
+        app:layout_constraintTop_toBottomOf="@+id/btnGenerateCode" />
 
     <TextView
         android:id="@+id/textView2"
@@ -80,7 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnNewIc" />
 
     <Button
-        android:id="@+id/btnGenerate"
+        android:id="@+id/btnGenerateCode"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="72dp"

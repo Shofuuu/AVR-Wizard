@@ -95,7 +95,7 @@
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/btnCodePWM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/bgcolor2"
@@ -103,12 +103,12 @@
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/btnCodePWM"
+                android:id="@+id/btnCodeTimer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/bgcolor2"
-                android:textAllCaps="false"
-                android:text="Button" />
+                android:text="Timer Counter"
+                android:textAllCaps="false" />
         </LinearLayout>
     </ScrollView>
 

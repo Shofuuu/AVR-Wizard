@@ -14,7 +14,7 @@
         <activity android:name=".GenerateCode" />
         <activity android:name=".FuseCalculator" />
         <activity android:name=".newBoardOrIC" />
-        <activity android:name=".selectedNewbie" />
+        <activity android:name=".selectMenu" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
