@@ -9,13 +9,6 @@ import java.io.InputStream;
 import android.app.Application;
 
 public class JSONEngine extends Application {
-<<<<<<< HEAD
-    private String ic_name;
-    JSONArray data;
-    JSONArray efuse;
-    public String loadJSONFromAsset() {
-        String json = null;
-=======
     private String json;
     private String ic_name;
     private JSONObject data;
@@ -24,7 +17,6 @@ public class JSONEngine extends Application {
     private String loadJSONFromAsset() {
         String raw_json = null;
 
->>>>>>> acc928f8a49db8325cfba108334fcde67145d4c7
         try {
             InputStream inputStream = getAssets().open("microchip_data.json");
             int size_stream = inputStream.available();
@@ -34,27 +26,14 @@ public class JSONEngine extends Application {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-<<<<<<< HEAD
-        return json;
-    }
-=======
->>>>>>> acc928f8a49db8325cfba108334fcde67145d4c7
 
         return raw_json;
     }
 
-<<<<<<< HEAD
-    public void setIC (String IC){
-        try {
-            JSONObject obj = new JSONObject(loadJSONFromAsset());
-            data = obj.getJSONArray(IC);
-            ic_name = IC;
-=======
     private void loadDataIC(){
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
             data = obj.getJSONObject(getICName());
->>>>>>> acc928f8a49db8325cfba108334fcde67145d4c7
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -119,4 +98,3 @@ public class JSONEngine extends Application {
         return value;
     }
 }
-
