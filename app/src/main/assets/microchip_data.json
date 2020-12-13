@@ -1,33 +1,32 @@
 {
-"atmega328p" : [
-	"flash" : 32,
-	"sram" : 1,
-	"eeprom" : 1,
-	"efuse" : {
-		"0" : "1",
-		"1" : "1",
-		"2" : "1",
-	},
-	"lfuse" : {
-		"0" : "0",
-		"1" : "1",
-		"2" : "0",
-		"3" : "0",
-		"4" : "0",
-		"5" : "1",
-		"6" : "1",
-		"7" : "0",
-	},
-	"hfuse" : {
-		"0" : "1",
-		"1" : "0",
-		"2" : "0",
-		"3" : "1",
-		"4" : "1",
-		"5" : "0",
-		"6" : "1",
-		"7" : "1",
+	"atmega328p": {
+		"flash": "32",
+		"sram": "1",
+		"eeprom" : "1",
+		"efuse" : {
+			"0" : ["BODLEVEL0", "Brown-out detector trigger level", 1],
+			"1" : ["BODLEVEL0", "Brown-out detector trigger level", 1],
+			"2" : ["BODLEVEL0", "Brown-out detector trigger level", 1]
+		},
+		"lfuse" : {
+			"0" : ["CKSEL0", "Select clock source", 0],
+			"1" : ["CKSEL1", "Select clock source", 1],
+			"2" : ["CKSEL2", "Select clock source", 0],
+			"3" : ["CKSEL3", "Select clock source", 0],
+			"4" : ["SUT0", "Select startup time", 0],
+			"5" : ["SUT1", "Select startup time", 1],
+			"6" : ["CKOUT", "Clock output", 1],
+			"7" : ["CKDIV8", "Divide clock by 8", 0]
+		},
+		"hfuse" : {
+			"0" : ["BOOTRST", "Select reset vector", 1],
+			"1" : ["BOOTSZ0", "Select boot size", 0],
+			"2" : ["BOOTSZ1", "Select boot size", 0],
+			"3" : ["EESAVE", "EEPROM not erased during download", 1],
+			"4" : ["WDTON", "Watchdog timer always on", 1],
+			"5" : ["SPIEN", "Enable downloading program", 0],
+			"6" : ["DWEN", "Debug wire enable", 1],
+			"7" : ["RSTDISBL", "External reset disable", 1]
+		}
 	}
-]
 }
-

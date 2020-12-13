@@ -6,8 +6,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
+import android.app.Application;
 
-public class JSONEngine extends AppCompatActivity {
+public class JSONEngine extends Application {
 
     private String json;
     private String ic_name;
