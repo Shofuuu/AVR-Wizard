@@ -14,7 +14,17 @@ public class FuseCalculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fuse_calculator);
 
-        Button btngeneratefuse = (Button) findViewById(R.id.btngeneratecode);
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+        );
+
+        Button btngeneratefuse = (Button) findViewById(R.id.btngeneratefuse);
         btngeneratefuse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
