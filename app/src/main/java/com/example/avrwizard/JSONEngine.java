@@ -49,13 +49,12 @@ public class JSONEngine extends Application {
     }
 
     public String getFlash() {
-       String tmp = loadJSONFromAsset();
-//        try {
-//            JSONObject json_obj = new JSONObject();
-//            JSONObject tmp_obj = data.getString("flash");
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
+       String tmp = null;
+        try {
+            tmp = data.getString("flash");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         return tmp;
     }
 
