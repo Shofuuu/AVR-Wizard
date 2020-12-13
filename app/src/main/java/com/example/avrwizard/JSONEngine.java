@@ -49,7 +49,7 @@ public class JSONEngine extends Application {
     }
 
     public String getFlash() {
-       String tmp = null;
+        String tmp = null;
         try {
             tmp = data.getString("flash");
         } catch (JSONException e) {
@@ -89,13 +89,13 @@ public class JSONEngine extends Application {
     }
 
     public String getEFuseValue(int index){
-       String value = "";
-       try {
-           value = efuse.getString(index);
-       } catch (JSONException e) {
-           e.printStackTrace();
-       }
-       return value;
+        String value = "";
+        try {
+            value = efuse.getString(index);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return value;
     }
 }
 
