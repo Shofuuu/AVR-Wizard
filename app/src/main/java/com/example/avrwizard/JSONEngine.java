@@ -11,7 +11,7 @@ import android.app.Application;
 public class JSONEngine extends Application {
     private String json;
     private String ic_name;
-    private JSONArray data;
+    private JSONObject data;
     private JSONArray efuse;
 
     private String loadJSONFromAsset() {
@@ -35,7 +35,7 @@ public class JSONEngine extends Application {
     private void loadDataIC(){
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
-            data = obj.getJSONArray(getICName());
+            data = obj.getJSONObject(getICName());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -53,7 +53,7 @@ public class JSONEngine extends Application {
     public String getFlash() {
        String tmp = "";
         try {
-            tmp = data.getString(0);
+            tmp = data.getString("flash");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -63,7 +63,7 @@ public class JSONEngine extends Application {
     public String getSram(){
         String tmp = "";
         try {
-            tmp = data.getString(1);
+            tmp = data.getString("sram");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -73,7 +73,7 @@ public class JSONEngine extends Application {
     public String getEeprom(){
         String tmp = "";
         try {
-            tmp = data.getString(2);
+            tmp = data.getString("eeprom");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -82,7 +82,7 @@ public class JSONEngine extends Application {
 
     public String getEFuseName(int index){
         try {
-            JSONObject fuse_e = data.getJSONObject(3);
+            JSONObject fuse_e = data.getJSONObject("efuse");
             efuse = fuse_e.getJSONArray(String.valueOf(index));
         } catch (JSONException e) {
             e.printStackTrace();
