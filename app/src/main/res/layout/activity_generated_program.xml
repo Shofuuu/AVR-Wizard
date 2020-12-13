@@ -68,6 +68,32 @@
                 android:textColor="@color/fgtext"
                 android:textSize="24sp"
                 android:text="Function Code" />
+
+            <EditText
+                android:id="@+id/codeFunction"
+                android:layout_width="match_parent"
+                android:layout_height="264dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:textColor="@color/fgtext"
+                android:inputType="textMultiLine"/>
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Main Code"
+                android:textColor="@color/fgtext"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/codeMain"
+                android:layout_width="match_parent"
+                android:layout_height="264dp"
+                android:ems="10"
+                android:textColor="@color/fgtext"
+                android:gravity="start|top"
+                android:inputType="textMultiLine" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

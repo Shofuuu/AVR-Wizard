@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".GeneratedProgram"></activity>
+        <activity android:name=".GeneratedValue"></activity>
+        <activity android:name=".GeneratedProgram" />
         <activity android:name=".GenerateCode" />
         <activity android:name=".FuseCalculator" />
         <activity android:name=".newBoardOrIC" />

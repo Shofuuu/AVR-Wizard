@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor"
+    tools:context=".GeneratedValue">
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avrwizard_wave_top" />
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="165dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_rect"
+        android:text="OK Done!"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFuseSum" />
+
+    <Button
+        android:id="@+id/btnTakeMeBack"
+        android:layout_width="165dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginLeft="212dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_rect_red"
+        android:text="Take me back"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFuseSum" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="Generated Value"
+        android:textColor="@color/fgtext"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtFuseValue"
+        android:layout_width="286dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="136dp"
+        android:text="Fuse : "
+        android:textColor="@color/fgtext"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="347dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:text="Summary : "
+        android:textColor="@color/fgtext"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFuseValue" />
+
+    <TextView
+        android:id="@+id/txtFuseSum"
+        android:layout_width="347dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="8dp"
+        android:text="desc.. "
+        android:textColor="@color/fgtext"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+</androidx.constraintlayout.widget.ConstraintLayout>
