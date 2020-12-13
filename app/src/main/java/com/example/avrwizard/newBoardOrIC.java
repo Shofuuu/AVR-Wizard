@@ -34,9 +34,9 @@ public class newBoardOrIC extends AppCompatActivity {
         });
         TextView txtboarddescription = (TextView) findViewById(R.id.txtboarddescription);
         JSONEngine json = (JSONEngine) getApplicationContext();
-        json.setIC("atmega328p");
+        json.setICName("atmega328p");
 
-        txtboarddescription.setText("Atmega328P flash size : " + json.getFlash());
+        txtboarddescription.setText(json.getICName() + " flash size : " + json.getFlash());
     }
 
     private void openegeneratedcode(){
