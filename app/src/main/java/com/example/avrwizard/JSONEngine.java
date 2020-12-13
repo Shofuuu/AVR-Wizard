@@ -10,7 +10,9 @@ import java.io.InputStream;
 public class JSONEngine extends AppCompatActivity {
 
     private String json;
+    private String ic_name;
     JSONArray data;
+    JSONArray efuse;
     public String loadJSONFromAsset() {
         try {
             InputStream is = getAssets().open("microchip_data.json");
@@ -32,18 +34,16 @@ public class JSONEngine extends AppCompatActivity {
         try {
             JSONObject obj = new JSONObject(json);
             data = obj.getJSONArray(IC);
-            for (int i = 0; i<data.length(); i++){
-                JSONObject data_in = data.getJSONObject(i);
-                String flash = (String) data_in.get("flash");
-                String eeprom = (String) data_in.get("eeprom");
-                String sram = (String) data_in.get("sram");
-            }
+            ic_name = IC;
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
-
+    public String getIc_name(){
+        setIC(ic_name);
+        return ic_name;
+    }
     public String getFlash(){
         try {
             setIC(data.getString(0));
@@ -52,8 +52,33 @@ public class JSONEngine extends AppCompatActivity {
         }
         return getFlash();
     }
+    public String getSram(){
+        try {
+            setIC(data.getString(1));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return getSram();
+    }
+    public String getEeprom(){
+        try {
+            setIC(data.getString(2));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return getEeprom();
+    }
 
-
-
+    public String getEFuse(){
+        try {
+            JSONObject fuse_e = data.getJSONObject(3);
+            for (int i = 0; i<3 ; i++){
+                efuse.put(fuse_e.getString(String.valueOf(i)));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return getEFuse();
+    }
 }
 
