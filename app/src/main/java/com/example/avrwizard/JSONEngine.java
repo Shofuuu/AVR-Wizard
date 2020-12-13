@@ -41,44 +41,54 @@ public class JSONEngine extends AppCompatActivity {
 
     }
     public String getIc_name(){
-        setIC(ic_name);
         return ic_name;
     }
-    public String getFlash(){
+    public String getFlash() {
+       String tmp = "";
         try {
-            setIC(data.getString(0));
+            tmp = data.getString(0);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return getFlash();
+        return tmp;
     }
     public String getSram(){
+        String tmp = "";
         try {
-            setIC(data.getString(1));
+            tmp = data.getString(1);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return getSram();
+        return tmp;
     }
     public String getEeprom(){
+        String tmp = "";
         try {
-            setIC(data.getString(2));
+            tmp = data.getString(2);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return getEeprom();
+        return tmp;
     }
 
-    public String getEFuse(){
+    public String getEFuseName(int index){
         try {
             JSONObject fuse_e = data.getJSONObject(3);
-            for (int i = 0; i<3 ; i++){
-                efuse.put(fuse_e.getString(String.valueOf(i)));
-            }
+            efuse = fuse_e.getJSONArray(String.valueOf(index));
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return getEFuse();
+        return String.valueOf(efuse);
+    }
+
+    public String getEFuseValue(int index){
+       String value = "";
+       try {
+           value = efuse.getString(index);
+       } catch (JSONException e) {
+           e.printStackTrace();
+       }
+       return value;
     }
 }
 
