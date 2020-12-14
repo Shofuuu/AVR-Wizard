@@ -1,5 +1,11 @@
 {
-	"chip" :{
+		"chip": {
+			"1": "atmega328p",
+			"2": "atmega8a",
+			"3": "atmega128a",
+			"4": "attiny85",
+			"5": "atmega32a"
+		},
 		"atmega328p": {
 			"flash": "32",
 			"sram": "1",
@@ -170,5 +176,5 @@
 				"7" : ["OCDEN", "Enable OCD", 1]
 			}
 		}
-	}
+
 }

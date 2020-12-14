@@ -101,7 +101,8 @@ public class newBoardOrIC extends AppCompatActivity {
             "EEPROM Size : " + json.getEeprom() + "Kb\n" +
             "FLASH Size : " + json.getFlash() + "Kb\n" +
             "SRAM Size : " + json.getSram() + "Kb\n\n" +
-            device_info
+            "IC : " + json.getIC(1)
+//            device_info
         );
     }
 
