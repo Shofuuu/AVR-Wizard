@@ -13,7 +13,13 @@ import android.app.Application;
 import kotlin.contracts.Returns;
 
 public class JSONEngine extends Application {
-//    private String json;
+    public final int GENERATED_FUSE_OK = 0;
+    public final int GENERATED_FUSE_WARNING = 1;
+    public final int GENERATED_FUSE_ALERT = 2;
+
+    public final int IC_LOW_END = 0;
+    public final int IC_HIGH_END = 1;
+
     private String ic_name;
     private JSONObject data;
     private JSONArray efuse;
@@ -74,7 +80,7 @@ public class JSONEngine extends Application {
         return tmp;
     }
 
-//    EERPOM
+//    EEPROM
     public String getEeprom(){
         String tmp = "";
         try {
@@ -121,7 +127,8 @@ public class JSONEngine extends Application {
         }
         return HFuseName;
     }
-    public String HfuseValue (int index){
+
+    public String HFuseValue (int index){
         String HFuseValue = "";
         try {
             JSONObject fuse_h = data.getJSONObject("hfuse");
@@ -145,7 +152,8 @@ public class JSONEngine extends Application {
         }
         return LFuseName;
     }
-    public String LfuseValue (int index){
+
+    public String LFuseValue (int index){
         String LFuseValue = "";
         try {
             JSONObject fuse_l = data.getJSONObject("lfuse");
@@ -156,5 +164,23 @@ public class JSONEngine extends Application {
         }
         return LFuseValue;
     }
-    
+
+    public String generatedFuseSummary(int mode){
+        final String[] message = {
+            "Good choice!, use the calculated fuse value to setting up your AVR IC(s) happy hacking!",
+            "We have found enabled fuse that will lock your IC(s) for the entire life cycle! Please confirm it",
+            "With that calculated value, are you sure to lock your IC(s) and disable some important feature?"
+        };
+
+        return message[mode];
+    }
+
+    public String chipInformation(int mode){
+        final String[] message = {
+            "Low cost 8bit integrated circuit with enough feature to boost your application, help your application to optimize power consumption!",
+            "Boost up your application with big memory size for high performance application with full feature. Fast and low power 8bit integrated circuit"
+        };
+
+        return message[mode];
+    }
 }
