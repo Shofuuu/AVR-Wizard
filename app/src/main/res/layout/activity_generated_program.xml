@@ -63,7 +63,8 @@
 
             <TextView
                 android:id="@+id/textView14"
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_width="383dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/fgtext"
                 android:textSize="24sp"
@@ -71,16 +72,20 @@
 
             <EditText
                 android:id="@+id/codeFunction"
-                android:layout_width="match_parent"
+                android:layout_width="383dp"
                 android:layout_height="264dp"
                 android:ems="10"
+                android:layout_gravity="center"
                 android:gravity="start|top"
-                android:textColor="@color/fgtext"
-                android:inputType="textMultiLine"/>
+                android:inputType="textMultiLine"
+                android:enabled="false"
+                android:focusable="false"
+                android:textColor="@color/fgtext" />
 
             <TextView
+                android:layout_gravity="center"
                 android:id="@+id/textView15"
-                android:layout_width="match_parent"
+                android:layout_width="383dp"
                 android:layout_height="wrap_content"
                 android:text="Main Code"
                 android:textColor="@color/fgtext"
@@ -88,11 +93,14 @@
 
             <EditText
                 android:id="@+id/codeMain"
-                android:layout_width="match_parent"
+                android:layout_width="383dp"
                 android:layout_height="264dp"
                 android:ems="10"
+                android:enabled="false"
+                android:focusable="false"
                 android:textColor="@color/fgtext"
                 android:gravity="start|top"
+                android:layout_gravity="center"
                 android:inputType="textMultiLine" />
         </LinearLayout>
     </ScrollView>

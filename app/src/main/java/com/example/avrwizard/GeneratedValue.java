@@ -16,12 +16,12 @@ public class GeneratedValue extends AppCompatActivity {
 
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_IMMERSIVE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+            View.SYSTEM_UI_FLAG_IMMERSIVE
+            | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_FULLSCREEN
         );
 
         Button btnDone = (Button) findViewById(R.id.btnDone);
@@ -46,7 +46,15 @@ public class GeneratedValue extends AppCompatActivity {
     }
 
     private void backtofusecalc(){
-        Intent intent = new Intent(this, FuseCalculator.class);
+        Intent intent;
+        JSONEngine json = (JSONEngine) getApplicationContext();
+
+        if(json.getIntentSource() == json.FROM_FUSE_CALC_INTENT){
+            intent = new Intent(this, FuseCalculator.class);
+        }else{
+            intent = new Intent(this, newBoardOrIC.class);
+        }
+
         startActivity(intent);
     }
 }
