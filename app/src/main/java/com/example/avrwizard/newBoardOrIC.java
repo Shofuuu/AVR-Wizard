@@ -97,10 +97,10 @@ public class newBoardOrIC extends AppCompatActivity {
         }
 
         txtboarddescription.setText(
-            json.getICName() + "AVR devices\n" +
+            json.getICName() + " AVR devices\n\n" +
             "EEPROM Size : " + json.getEeprom() + "Kb\n" +
             "FLASH Size : " + json.getEeprom() + "Kb\n" +
-            "SRAM Size : " + json.getEeprom() + "Kb\n" +
+            "SRAM Size : " + json.getEeprom() + "Kb\n\n" +
             device_info
         );
     }
