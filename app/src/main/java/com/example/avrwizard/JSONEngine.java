@@ -26,6 +26,7 @@ public class JSONEngine extends Application {
     private int source_intent;
 
     private String ic_name;
+    private JSONArray listIC;
     private JSONObject data;
     private JSONArray efuse;
     private JSONArray hfuse;
@@ -46,6 +47,18 @@ public class JSONEngine extends Application {
         }
 
         return raw_json;
+    }
+//    Get IC
+    public String getIC(int index) {
+        String list = "";
+        try {
+            JSONObject chip = new JSONObject(loadJSONFromAsset());
+            listIC = chip.getJSONArray("chip");
+            list = listIC.getString(index);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 
 //    Get Data IC
