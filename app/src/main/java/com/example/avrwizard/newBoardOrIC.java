@@ -40,7 +40,9 @@ public class newBoardOrIC extends AppCompatActivity {
                 json.getICName() + " flash size : " + json.getFlash() + "\n" +
                 json.getICName() + " eeprom size : " + json.getEeprom() + "\n" +
                 json.getICName() + " sram size : " + json.getSram() + "\n" +
-                json.getICName() + " efuse 1 : " + json.getEFuseName(1) + "\n"
+                json.getICName() + " efuse 1 : " + json.getEFuseName(0) + "\n" +
+                json.getICName() + " EFuse Value : " + json.getEFuseValue(0)
+
         );
     }
 
