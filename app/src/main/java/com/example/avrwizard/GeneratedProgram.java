@@ -34,7 +34,7 @@ public class GeneratedProgram extends AppCompatActivity {
     }
 
     private void backtoselectboard(){
-        Intent intent = new Intent(this, GenerateCode.class);
+        Intent intent = new Intent(this, selectMenu.class);
         startActivity(intent);
     }
 }
