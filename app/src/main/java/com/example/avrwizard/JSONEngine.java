@@ -31,6 +31,8 @@ public class JSONEngine extends Application {
     private JSONArray hfuse;
     private JSONArray lfuse;
 
+    private int delay,freq,pre;
+
     private String loadJSONFromAsset() {
         String raw_json = null;
         try {
@@ -195,5 +197,19 @@ public class JSONEngine extends Application {
 
     public int getIntentSource(){
         return source_intent;
+    }
+
+    private void SetTimePrescaller(int t){ pre = t; }
+    private void SetTimeFrequency(int t){freq = t; }
+    private void SetTimeDelay(int t){delay = t; }
+
+    private int GetTimePrescaller(){ return pre; }
+    private int GetTimeFrequency(){return freq ; }
+    private int GetTimeDelay(){return delay; }
+
+    private String GetTimeValue(){
+        String value = "";
+        value = (Integer.toHexString(65536 - (GetTimeDelay()*(GetTimeFrequency()/GetTimePrescaller()))));
+        return value;
     }
 }
