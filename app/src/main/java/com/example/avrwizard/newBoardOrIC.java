@@ -39,7 +39,8 @@ public class newBoardOrIC extends AppCompatActivity {
         txtboarddescription.setText(
                 json.getICName() + " flash size : " + json.getFlash() + "\n" +
                 json.getICName() + " eeprom size : " + json.getEeprom() + "\n" +
-                json.getICName() + " sram size : " + json.getSram() + "\n"
+                json.getICName() + " sram size : " + json.getSram() + "\n" +
+                json.getICName() + " efuse 1 : " + json.getEFuseName(1) + "\n"
         );
     }
 
