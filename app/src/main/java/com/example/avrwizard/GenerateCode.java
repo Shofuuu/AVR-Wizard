@@ -2,6 +2,7 @@ package com.example.avrwizard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -76,30 +77,37 @@ public class GenerateCode extends AppCompatActivity {
     }
 
     private void codereadadc(){
-
+        Intent intent = new Intent(this, GeneratedProgram.class);
+        startActivity(intent);
     }
 
     private void codereaduart(){
-
+        Intent intent = new Intent(this, GeneratedProgram.class);
+        startActivity(intent);
     }
 
     private void codewriteuart(){
-
+        Intent intent = new Intent(this, GeneratedProgram.class);
+        startActivity(intent);
     }
 
     private void codereadbutton(){
-
+        Intent intent = new Intent(this, GeneratedProgram.class);
+        startActivity(intent);
     }
 
     private void codewriteoutput(){
-
+        Intent intent = new Intent(this, GeneratedProgram.class);
+        startActivity(intent);
     }
 
     private void codewritepwm(){
-
+        Intent intent = new Intent(this, GeneratedProgram.class);
+        startActivity(intent);
     }
 
     private void codetimer(){
-
+        Intent intent = new Intent(this, GeneratedProgram.class);
+        startActivity(intent);
     }
 }
