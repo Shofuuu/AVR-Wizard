@@ -20,7 +20,6 @@ public class JSONEngine extends Application {
     private JSONArray hfuse;
     private JSONArray lfuse;
 
-//    Load JSON file
     private String loadJSONFromAsset() {
         String raw_json = null;
         try {
@@ -157,5 +156,5 @@ public class JSONEngine extends Application {
         }
         return LFuseValue;
     }
-
+    
 }
