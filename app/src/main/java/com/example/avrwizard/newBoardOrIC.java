@@ -99,14 +99,18 @@ public class newBoardOrIC extends AppCompatActivity {
         txtboarddescription.setText(
             json.getICName() + " AVR devices\n\n" +
             "EEPROM Size : " + json.getEeprom() + "Kb\n" +
-            "FLASH Size : " + json.getEeprom() + "Kb\n" +
-            "SRAM Size : " + json.getEeprom() + "Kb\n\n" +
+            "FLASH Size : " + json.getFlash() + "Kb\n" +
+            "SRAM Size : " + json.getSram() + "Kb\n\n" +
             device_info
         );
     }
 
     private void openegeneratedcode(){
         Intent intent = new Intent(this, GeneratedValue.class);
+        JSONEngine json = (JSONEngine) getApplicationContext();
+
+        json.setIntentSource(json.FROM_NEW_BOARD_INTENT);
+
         startActivity(intent);
     }
 }

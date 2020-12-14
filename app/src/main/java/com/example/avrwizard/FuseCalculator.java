@@ -35,6 +35,10 @@ public class FuseCalculator extends AppCompatActivity {
 
     private void opengeneratedvalue(){
         Intent intent = new Intent(this, GeneratedValue.class);
+        JSONEngine json = (JSONEngine) getApplicationContext();
+
+        json.setIntentSource(json.FROM_FUSE_CALC_INTENT);
+
         startActivity(intent);
     }
 }

@@ -46,7 +46,15 @@ public class GeneratedValue extends AppCompatActivity {
     }
 
     private void backtofusecalc(){
-        Intent intent = new Intent(this, FuseCalculator.class);
+        Intent intent;
+        JSONEngine json = (JSONEngine) getApplicationContext();
+
+        if(json.getIntentSource() == json.FROM_FUSE_CALC_INTENT){
+            intent = new Intent(this, FuseCalculator.class);
+        }else{
+            intent = new Intent(this, newBoardOrIC.class);
+        }
+
         startActivity(intent);
     }
 }

@@ -17,8 +17,13 @@ public class JSONEngine extends Application {
     public final int GENERATED_FUSE_WARNING = 1;
     public final int GENERATED_FUSE_ALERT = 2;
 
+    public final int FROM_NEW_BOARD_INTENT = 0;
+    public final int FROM_FUSE_CALC_INTENT = 1;
+
     public final int IC_LOW_END = 0;
     public final int IC_HIGH_END = 1;
+
+    private int source_intent;
 
     private String ic_name;
     private JSONObject data;
@@ -182,5 +187,13 @@ public class JSONEngine extends Application {
         };
 
         return message[mode];
+    }
+
+    public void setIntentSource(int source){
+        source_intent = source;
+    }
+
+    public int getIntentSource(){
+        return source_intent;
     }
 }
