@@ -36,6 +36,8 @@ public class JSONEngine extends Application {
 
     private int delay,freq,pre;
 
+    private String select_freq;
+
     private String loadJSONFromAsset() {
         String raw_json = null;
         try {
@@ -63,7 +65,7 @@ public class JSONEngine extends Application {
     }
 
 //    Get Data IC
-    private void loadDataIC(){
+    public void loadDataIC(){
         try {
             obj = new JSONObject(loadJSONFromAsset());
             data = obj.getJSONObject(getICName());
@@ -203,6 +205,14 @@ public class JSONEngine extends Application {
         };
 
         return message[mode];
+    }
+
+    public void setSelectedFrequency(String freq){
+        select_freq = freq;
+    }
+
+    public String getSelectedFrequency(){
+        return select_freq;
     }
 
     public void setIntentSource(int source){

@@ -46,8 +46,8 @@
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="40dp"
+        android:text="Select your chip"
         android:textColor="@color/fgtext"
-        android:text="Select your board or IC"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
