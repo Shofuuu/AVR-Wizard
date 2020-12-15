@@ -55,7 +55,7 @@ public class newBoardOrIC extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         final ArrayAdapter<String> adapter_chip = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list_chip);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter_chip.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerChip = (Spinner) findViewById(R.id.spinnerboardname);
         spinnerChip.setAdapter(adapter_chip);
@@ -63,6 +63,17 @@ public class newBoardOrIC extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 spinnerChipText = adapterView.getItemAtPosition(i).toString();
+
+                View decorView = getWindow().getDecorView();
+                decorView.setSystemUiVisibility(
+                        View.SYSTEM_UI_FLAG_IMMERSIVE
+                                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                );
+
                 JSONEngine json = (JSONEngine) getApplicationContext();
 
                 TextView txtboarddescription = (TextView) findViewById(R.id.txtboarddescription);
@@ -82,16 +93,6 @@ public class newBoardOrIC extends AppCompatActivity {
                     "FLASH Size : " + json.getFlash() + "\n" +
                     "SRAM Size : " + json.getSram() + "\n\n" +
                     device_info
-                );
-
-                View decorView = getWindow().getDecorView();
-                decorView.setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_IMMERSIVE
-                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_FULLSCREEN
                 );
             }
 
@@ -115,6 +116,17 @@ public class newBoardOrIC extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String spFreqTxt = adapterView.getItemAtPosition(i).toString();
+
+                View decorView = getWindow().getDecorView();
+                decorView.setSystemUiVisibility(
+                        View.SYSTEM_UI_FLAG_IMMERSIVE
+                                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                );
+
                 JSONEngine json = (JSONEngine) getApplicationContext();
 
                 if(spFreqTxt.equals("8MHz Internal")) {
@@ -142,16 +154,6 @@ public class newBoardOrIC extends AppCompatActivity {
                     json.setSelectedFrequency("16000000");
                     json.setClockSourceExternal(true);
                 }
-
-                View decorView = getWindow().getDecorView();
-                decorView.setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_IMMERSIVE
-                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_FULLSCREEN
-                );
             }
 
             @Override
