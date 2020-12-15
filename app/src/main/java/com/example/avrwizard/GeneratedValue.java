@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class GeneratedValue extends AppCompatActivity {
 
@@ -24,6 +25,8 @@ public class GeneratedValue extends AppCompatActivity {
             | View.SYSTEM_UI_FLAG_FULLSCREEN
         );
 
+        JSONEngine json = (JSONEngine) getApplicationContext();
+
         Button btnDone = (Button) findViewById(R.id.btnDone);
         btnDone.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +41,13 @@ public class GeneratedValue extends AppCompatActivity {
                 backtofusecalc();
             }
         });
+
+        TextView txtFuseValue = (TextView) findViewById(R.id.txtFuseValue);
+        txtFuseValue.setText(
+            "High Fuse : " + json.getUserHFuse() + "\n" +
+            "Low Fuse : " + json.getUserLFuse() + "\n" +
+            "Ext. Fuse : " + json.getUserEFuse()
+        );
     }
 
     private void backtoselectmenu(){

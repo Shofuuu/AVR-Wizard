@@ -25,6 +25,8 @@ public class JSONEngine extends Application {
 
     private int source_intent;
 
+    private String[] user_fuse = new String[3];
+
     private String ic_name;
     private JSONArray listIC;
     private JSONObject IC;
@@ -205,6 +207,27 @@ public class JSONEngine extends Application {
         };
 
         return message[mode];
+    }
+
+    public void setUserHFuse(String fuse){
+        user_fuse[0] = fuse;
+    }
+    public String getUserHFuse(){
+        return ("0x" + user_fuse[0]);
+    }
+
+    public void setUserLFuse(String fuse){
+        user_fuse[1] = fuse;
+    }
+    public String getUserLFuse(){
+        return ("0x" + user_fuse[1]);
+    }
+
+    public void setUserEFuse(String fuse){
+        user_fuse[2] = fuse;
+    }
+    public String getUserEFuse(){
+        return ("0x" + user_fuse[2]);
     }
 
     public void setSelectedFrequency(String freq){

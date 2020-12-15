@@ -13,7 +13,12 @@
 			"efuse" : {
 				"0" : ["BODLEVEL0", "Brown-out detector trigger level", 1],
 				"1" : ["BODLEVEL0", "Brown-out detector trigger level", 1],
-				"2" : ["BODLEVEL0", "Brown-out detector trigger level", 1]
+				"2" : ["BODLEVEL0", "Brown-out detector trigger level", 1],
+				"3" : ["-", "-", 1],
+				"4" : ["-", "-", 1],
+				"5" : ["-", "-", 1],
+				"6" : ["-", "-", 1],
+				"7" : ["-", "-", 1]
 			},
 			"lfuse" : {
 				"0" : ["CKSEL0", "Select clock source", 0],

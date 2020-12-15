@@ -76,21 +76,21 @@ public class newBoardOrIC extends AppCompatActivity {
                 }
 
                 txtboarddescription.setText(
-                        json.getICName() + " AVR devices\n\n" +
-                                "EEPROM Size : " + json.getEeprom() + "Kb\n" +
-                                "FLASH Size : " + json.getFlash() + "Kb\n" +
-                                "SRAM Size : " + json.getSram() + "Kb\n\n" +
-                                device_info
+                    json.getICName() + " AVR devices\n\n" +
+                    "EEPROM Size : " + json.getEeprom() + "Kb\n" +
+                    "FLASH Size : " + json.getFlash() + "Kb\n" +
+                    "SRAM Size : " + json.getSram() + "Kb\n\n" +
+                    device_info
                 );
 
                 View decorView = getWindow().getDecorView();
                 decorView.setSystemUiVisibility(
-                        View.SYSTEM_UI_FLAG_IMMERSIVE
-                                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    View.SYSTEM_UI_FLAG_IMMERSIVE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
                 );
             }
 
@@ -98,12 +98,12 @@ public class newBoardOrIC extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
                 View decorView = getWindow().getDecorView();
                 decorView.setSystemUiVisibility(
-                        View.SYSTEM_UI_FLAG_IMMERSIVE
-                                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    View.SYSTEM_UI_FLAG_IMMERSIVE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
                 );
             }
         });
@@ -114,6 +114,9 @@ public class newBoardOrIC extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 spinnerFreqText = adapterView.getItemAtPosition(i).toString();
+
+                JSONEngine json = (JSONEngine) getApplicationContext();
+                json.setSelectedFrequency(spinnerFreqText);
 
                 View decorView = getWindow().getDecorView();
                 decorView.setSystemUiVisibility(
