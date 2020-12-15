@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class GenerateCode extends AppCompatActivity {
 
@@ -67,6 +68,8 @@ public class GenerateCode extends AppCompatActivity {
                 codewritepwm();
             }
         });
+
+        TextView codeInformation = (TextView) findViewById(R.id.codeInformation);
     }
 
     private void codereadadc(){

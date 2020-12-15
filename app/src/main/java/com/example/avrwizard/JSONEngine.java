@@ -26,7 +26,7 @@ public class JSONEngine extends Application {
     private int source_intent;
 
     private String[] user_fuse = new String[3];
-    private boolean[] danger_fuse = new boolean[3];
+    private boolean[] danger_fuse = {true, true, false};
     private boolean clock_source = true;
 
     private String ic_name;

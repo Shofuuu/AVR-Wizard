@@ -20,6 +20,18 @@ public class FuseCalculator extends AppCompatActivity {
     Spinner spinnerFuse;
     String strChip = "atmega328p";
     String strFuse = "lfuse";
+    String[] strLFuse = {
+        "1", "1", "1", "1",
+        "1", "1", "1", "1"
+    };
+    String[] strHFuse = {
+            "1", "1", "1", "1",
+            "1", "1", "1", "1"
+    };
+    String[] strEFuse = {
+            "1", "1", "1", "1",
+            "1", "1", "1", "1"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,15 +158,6 @@ public class FuseCalculator extends AppCompatActivity {
         final CheckBox cbfuse6 = (CheckBox) findViewById(R.id.cbfuse6);
         final CheckBox cbfuse7 = (CheckBox) findViewById(R.id.cbfuse7);
 
-        cbfuse0.setChecked(!json.getLFuseValue(0));
-        cbfuse1.setChecked(!json.getLFuseValue(1));
-        cbfuse2.setChecked(!json.getLFuseValue(2));
-        cbfuse3.setChecked(!json.getLFuseValue(3));
-        cbfuse4.setChecked(!json.getLFuseValue(4));
-        cbfuse5.setChecked(!json.getLFuseValue(5));
-        cbfuse6.setChecked(!json.getLFuseValue(6));
-        cbfuse7.setChecked(!json.getLFuseValue(7));
-
         final TextView fusename = (TextView) findViewById(R.id.fusename);
         TextView fusedescription = (TextView) findViewById(R.id.fusedescription);
 
@@ -222,8 +225,40 @@ public class FuseCalculator extends AppCompatActivity {
     private void opengeneratedvalue(){
         Intent intent = new Intent(this, GeneratedValue.class);
         JSONEngine json = (JSONEngine) getApplicationContext();
+        String tmp_fuse = "";
+        int tmp_decimal = 0;
+        String tmp_hex;
+
+        CheckBox cbfuse5 = (CheckBox) findViewById(R.id.cbfuse5);
 
         json.setIntentSource(json.FROM_FUSE_CALC_INTENT);
+
+        for(int x=0;x<8;x++)
+            tmp_fuse += strLFuse[7-x];
+        tmp_decimal = Integer.parseInt(tmp_fuse,2);
+        tmp_hex = Integer.toString(tmp_decimal, 16);
+        json.setUserLFuse(tmp_hex);
+        tmp_fuse = "";
+        tmp_decimal = 0;
+        tmp_hex = "";
+
+        for(int x=0;x<8;x++)
+            tmp_fuse += strHFuse[7-x];
+        tmp_decimal = Integer.parseInt(tmp_fuse,2);
+        tmp_hex = Integer.toString(tmp_decimal, 16);
+        json.setUserHFuse(tmp_hex);
+        tmp_fuse = "";
+        tmp_decimal = 0;
+        tmp_hex = "";
+
+        for(int x=0;x<8;x++)
+            tmp_fuse += strEFuse[7-x];
+        tmp_decimal = Integer.parseInt(tmp_fuse,2);
+        tmp_hex = Integer.toString(tmp_decimal, 16);
+        json.setUserEFuse(tmp_hex);
+        tmp_fuse = "";
+        tmp_decimal = 0;
+        tmp_hex = "";
 
         startActivity(intent);
     }
@@ -283,12 +318,56 @@ public class FuseCalculator extends AppCompatActivity {
     private void update_fusedesc(int index){
         JSONEngine json = (JSONEngine) getApplicationContext();
         TextView fusedescription = (TextView) findViewById(R.id.fusedescription);
+        TextView fusename = (TextView) findViewById(R.id.fusename);
+
+        CheckBox cbfuse0 = (CheckBox) findViewById(R.id.cbfuse0);
+        CheckBox cbfuse1 = (CheckBox) findViewById(R.id.cbfuse1);
+        CheckBox cbfuse2 = (CheckBox) findViewById(R.id.cbfuse2);
+        CheckBox cbfuse3 = (CheckBox) findViewById(R.id.cbfuse3);
+        CheckBox cbfuse4 = (CheckBox) findViewById(R.id.cbfuse4);
+        CheckBox cbfuse5 = (CheckBox) findViewById(R.id.cbfuse5);
+        CheckBox cbfuse6 = (CheckBox) findViewById(R.id.cbfuse6);
+        CheckBox cbfuse7 = (CheckBox) findViewById(R.id.cbfuse7);
 
         if(strFuse.equals("efuse")){
+            strEFuse[0] = (cbfuse0.isChecked() ? "0" : "1");
+            strEFuse[1] = (cbfuse1.isChecked() ? "0" : "1");
+            strEFuse[2] = (cbfuse2.isChecked() ? "0" : "1");
+            strEFuse[3] = (cbfuse3.isChecked() ? "0" : "1");
+            strEFuse[4] = (cbfuse4.isChecked() ? "0" : "1");
+            strEFuse[5] = (cbfuse5.isChecked() ? "0" : "1");
+            strEFuse[6] = (cbfuse6.isChecked() ? "0" : "1");
+            strEFuse[7] = (cbfuse7.isChecked() ? "0" : "1");
+
             fusedescription.setText(json.getEFuseDesc(index));
         }else if(strFuse.equals("lfuse")){
+            strLFuse[0] = (cbfuse0.isChecked() ? "0" : "1");
+            strLFuse[1] = (cbfuse1.isChecked() ? "0" : "1");
+            strLFuse[2] = (cbfuse2.isChecked() ? "0" : "1");
+            strLFuse[3] = (cbfuse3.isChecked() ? "0" : "1");
+            strLFuse[4] = (cbfuse4.isChecked() ? "0" : "1");
+            strLFuse[5] = (cbfuse5.isChecked() ? "0" : "1");
+            strLFuse[6] = (cbfuse6.isChecked() ? "0" : "1");
+            strLFuse[7] = (cbfuse7.isChecked() ? "0" : "1");
+
             fusedescription.setText(json.getLFuseDesc(index));
         }else if(strFuse.equals("hfuse")){
+            strHFuse[0] = (cbfuse0.isChecked() ? "0" : "1");
+            strHFuse[1] = (cbfuse1.isChecked() ? "0" : "1");
+            strHFuse[2] = (cbfuse2.isChecked() ? "0" : "1");
+            strHFuse[3] = (cbfuse3.isChecked() ? "0" : "1");
+            strHFuse[4] = (cbfuse4.isChecked() ? "0" : "1");
+            strHFuse[5] = (cbfuse5.isChecked() ? "0" : "1");
+            strHFuse[6] = (cbfuse6.isChecked() ? "0" : "1");
+            strHFuse[7] = (cbfuse7.isChecked() ? "0" : "1");
+
+            if(fusename.getText().equals("RSTDISBL")){
+                json.setUserEnableRSTDISBL(false);
+            }
+            if(fusename.getText().equals("SPIEN") && cbfuse5.isChecked()){
+                json.setUserEnableSPIEN(false);
+            }
+
             fusedescription.setText(json.getHFuseDesc(index));
         }
     }

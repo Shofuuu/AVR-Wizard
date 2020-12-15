@@ -42,8 +42,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="336dp"
-        android:layout_height="276dp"
+        android:layout_width="335dp"
+        android:layout_height="253dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,8 +59,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/bgcolor2"
-                android:textAllCaps="false"
-                android:text="Read ADC Value" />
+                android:text="Read ADC Value"
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnCodeReadUART"
@@ -102,24 +102,19 @@
                 android:text="Write PWM"
                 android:textAllCaps="false" />
 
-            <Button
-                android:id="@+id/btnCodeTimer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/bgcolor2"
-                android:text="Timer Counter"
-                android:textAllCaps="false" />
         </LinearLayout>
     </ScrollView>
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/codeInformation"
         android:layout_width="336dp"
         android:layout_height="146dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
+        android:text="Code Information"
+        android:textColor="@color/fgtext"
         android:textSize="24sp"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

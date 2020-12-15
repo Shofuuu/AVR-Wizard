@@ -54,12 +54,13 @@ public class GeneratedValue extends AppCompatActivity {
         );
 
         if(!json.getUserEnableBypass()){
-            if(!json.getUserEnableSPIEN() || !json.getUserEnableRSTDISBL()){
+            txtFuseSum.setText(json.generatedFuseSummary(json.GENERATED_FUSE_OK));
+
+            if(!json.getUserEnableSPIEN() || !json.getUserEnableRSTDISBL()) {
                 txtFuseSum.setText(json.generatedFuseSummary(json.GENERATED_FUSE_WARNING));
-            }else if(!json.getUserEnableSPIEN() && !json.getUserEnableRSTDISBL()) {
+            }
+            if(!json.getUserEnableSPIEN() && !json.getUserEnableRSTDISBL()) {
                 txtFuseSum.setText(json.generatedFuseSummary(json.GENERATED_FUSE_ALERT));
-            }else{
-                txtFuseSum.setText(json.generatedFuseSummary(json.GENERATED_FUSE_OK));
             }
         }else{
             txtFuseSum.setText(json.generatedFuseSummary(json.GENERATED_FUSE_OK));
@@ -68,12 +69,20 @@ public class GeneratedValue extends AppCompatActivity {
 
     private void backtoselectmenu(){
         Intent intent = new Intent(this, selectMenu.class);
+        JSONEngine json = (JSONEngine) getApplicationContext();
+
+        json.setUserEnableSPIEN(true);
+        json.setUserEnableRSTDISBL(true);
+
         startActivity(intent);
     }
 
     private void backtofusecalc(){
         Intent intent;
         JSONEngine json = (JSONEngine) getApplicationContext();
+
+        json.setUserEnableSPIEN(true);
+        json.setUserEnableRSTDISBL(true);
 
         if(json.getIntentSource() == json.FROM_FUSE_CALC_INTENT){
             intent = new Intent(this, FuseCalculator.class);
