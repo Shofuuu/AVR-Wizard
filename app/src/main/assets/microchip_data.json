@@ -7,9 +7,9 @@
 			"5": "atmega32a"
 		},
 		"atmega328p": {
-			"flash": "32",
-			"sram": "1",
-			"eeprom" : "1",
+			"flash": "32 KB",
+			"sram": "1 KB",
+			"eeprom" : "1 KB",
 			"efuse" : {
 				"0" : ["BODLEVEL0", "Brown-out detector trigger level", 1],
 				"1" : ["BODLEVEL0", "Brown-out detector trigger level", 1],
@@ -42,9 +42,9 @@
 			}
 		},
 		"atmega8a": {
-			"flash": "8",
-			"sram": "1",
-			"eeprom" : "512",
+			"flash": "8 KB",
+			"sram": "1 KB",
+			"eeprom" : "512 B",
 			"efuse" : {
 				"0" : ["-", "-", 1],
 				"1" : ["-", "-", 1],
@@ -77,9 +77,9 @@
 			}
 		},
 		"atmega128a": {
-			"flash": "128",
-			"sram": "4",
-			"eeprom" : "4",
+			"flash": "128 KB",
+			"sram": "4 KB",
+			"eeprom" : "4 KB",
 			"efuse" : {
 				"0" : ["WDTON", "Watchdog Timer always on", 1],
 				"1" : ["M103C", "ATmega103 compatibility mode", 0],
@@ -112,9 +112,9 @@
 			}
 		},
 		"attiny85": {
-			"flash": "8",
-			"sram": "512",
-			"eeprom" : "512",
+			"flash": "8 KB",
+			"sram": "512 B",
+			"eeprom" : "512 B",
 			"efuse" : {
 				"0" : ["SELFPRGEN", "Self-programming enabled", 1],
 				"1" : ["-", "-", 1],
@@ -147,9 +147,15 @@
 			}
 		},
 		"atmega32a": {
+<<<<<<< HEAD
 			"flash": "32",
 			"sram": "2",
 			"eeprom" : "1",
+=======
+			"flash": "32 KB",
+			"sram": "2 KB",
+			"eeprom" : "1024 B",
+>>>>>>> refs/remotes/origin/main
 			"efuse" : {
 				"0" : ["-", "-", 1],
 				"1" : ["-", "-", 1],
