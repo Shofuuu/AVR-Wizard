@@ -147,15 +147,9 @@
 			}
 		},
 		"atmega32a": {
-<<<<<<< HEAD
-			"flash": "32",
-			"sram": "2",
-			"eeprom" : "1",
-=======
 			"flash": "32 KB",
 			"sram": "2 KB",
 			"eeprom" : "1024 B",
->>>>>>> refs/remotes/origin/main
 			"efuse" : {
 				"0" : ["-", "-", 1],
 				"1" : ["-", "-", 1],
