@@ -238,6 +238,8 @@ public class JSONEngine extends Application {
         return select_freq;
     }
 
+    public void setUserEnable
+
     public void setIntentSource(int source){
         source_intent = source;
     }
