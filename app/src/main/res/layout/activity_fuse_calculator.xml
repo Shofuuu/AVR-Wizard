@@ -35,48 +35,48 @@
         android:id="@+id/cbfuse4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
         android:text="FUSE4"
         android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cbfuse0"
         app:layout_constraintTop_toBottomOf="@+id/spinnerfuse" />
 
     <CheckBox
         android:id="@+id/cbfuse6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
         android:text="FUSE6"
         android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cbfuse2"
         app:layout_constraintTop_toBottomOf="@+id/cbfuse5" />
 
     <CheckBox
         android:id="@+id/cbfuse7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
         android:text="FUSE7"
         android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cbfuse3"
         app:layout_constraintTop_toBottomOf="@+id/cbfuse6" />
 
     <CheckBox
         android:id="@+id/cbfuse5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
         android:text="FUSE5"
         android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cbfuse1"
         app:layout_constraintTop_toBottomOf="@+id/cbfuse4" />
 
     <CheckBox
@@ -168,9 +168,9 @@
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
-        android:textSize="24sp"
         android:text="fusename"
         android:textColor="@color/fgtext"
+        android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cbfuse3" />
 
@@ -180,8 +180,8 @@
         android:layout_height="89dp"
         android:layout_marginTop="6dp"
         android:text="fuse description"
-        android:textSize="20sp"
         android:textColor="@color/fgtext"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"

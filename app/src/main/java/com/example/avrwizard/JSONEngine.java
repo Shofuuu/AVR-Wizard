@@ -129,20 +129,32 @@ public class JSONEngine extends Application {
         }
         return EFuseName;
     }
-    public String getEFuseValue(int index){
+    public String getEFuseDesc(int index){
         String EFuseValue = "";
         try {
             JSONObject fuse_e = data.getJSONObject("efuse");
             efuse = fuse_e.getJSONArray(String.valueOf(index));
-            EFuseValue = efuse.getString(2);
+            EFuseValue = efuse.getString(1);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return EFuseValue;
+    }
+    public boolean getEFuseValue(int index){
+        boolean EFuseValue = false;
+        try {
+            JSONObject fuse_e = data.getJSONObject("efuse");
+            efuse = fuse_e.getJSONArray(String.valueOf(index));
+            EFuseValue = efuse.getBoolean(2);
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return EFuseValue;
     }
 
+
 //    High Fuse
-    public String HFuseName (int index){
+    public String getHFuseName (int index){
         String HFuseName = "";
         try {
             JSONObject fuse_h = data.getJSONObject("hfuse");
@@ -153,13 +165,23 @@ public class JSONEngine extends Application {
         }
         return HFuseName;
     }
-
-    public String HFuseValue (int index){
-        String HFuseValue = "";
+    public String getHFuseDesc (int index){
+        String HFuseName = "";
         try {
             JSONObject fuse_h = data.getJSONObject("hfuse");
             hfuse = fuse_h.getJSONArray(String.valueOf(index));
-            HFuseValue = hfuse.getString(2);
+            HFuseName = hfuse.getString(1);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return HFuseName;
+    }
+    public boolean getHFuseValue (int index){
+        boolean HFuseValue = false;
+        try {
+            JSONObject fuse_h = data.getJSONObject("hfuse");
+            hfuse = fuse_h.getJSONArray(String.valueOf(index));
+            HFuseValue = hfuse.getBoolean(2);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -167,7 +189,7 @@ public class JSONEngine extends Application {
     }
 
 //    Low Fuse
-    public String LFuseName (int index){
+    public String getLFuseName (int index){
         String LFuseName = "";
         try {
             JSONObject fuse_l = data.getJSONObject("lfuse");
@@ -178,13 +200,23 @@ public class JSONEngine extends Application {
         }
         return LFuseName;
     }
-
-    public String LFuseValue (int index){
-        String LFuseValue = "";
+    public String getLFuseDesc (int index){
+        String LFuseName = "";
         try {
             JSONObject fuse_l = data.getJSONObject("lfuse");
             lfuse = fuse_l.getJSONArray(String.valueOf(index));
-            LFuseValue = lfuse.getString(2);
+            LFuseName = lfuse.getString(1);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return LFuseName;
+    }
+    public boolean getLFuseValue (int index){
+        boolean LFuseValue = false;
+        try {
+            JSONObject fuse_l = data.getJSONObject("lfuse");
+            lfuse = fuse_l.getJSONArray(String.valueOf(index));
+            LFuseValue = lfuse.getBoolean(2);
         } catch (JSONException e) {
             e.printStackTrace();
         }
