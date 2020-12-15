@@ -26,9 +26,10 @@ public class JSONEngine extends Application {
     private int source_intent;
 
     private String[] user_fuse = new String[3];
+    private boolean[] danger_fuse = new boolean[3];
+    private boolean clock_source = true;
 
     private String ic_name;
-    private JSONArray listIC;
     private JSONObject IC;
     private JSONObject obj;
     private JSONObject data;
@@ -238,7 +239,37 @@ public class JSONEngine extends Application {
         return select_freq;
     }
 
-    public void setUserEnable
+    public void setUserEnableSPIEN(boolean fuse){
+        danger_fuse[0] = fuse;
+    }
+    public boolean getUserEnableSPIEN(){
+        return danger_fuse[0];
+    }
+
+    public void setUserEnableRSTDISBL(boolean fuse){
+        danger_fuse[1] = fuse;
+    }
+    public boolean getUserEnableRSTDISBL(){
+        return danger_fuse[1];
+    }
+
+    public void setUserEnableBypass(boolean fuse){
+        danger_fuse[2] = fuse;
+    }
+    public boolean getUserEnableBypass(){
+        return danger_fuse[2];
+    }
+
+    public void setClockSourceExternal(boolean clock){
+        clock_source = clock;
+    }
+    public boolean getClockSourceExternal(){
+        return clock_source;
+    }
+
+    public String getUARTBaud(){
+        return "";
+    }
 
     public void setIntentSource(int source){
         source_intent = source;

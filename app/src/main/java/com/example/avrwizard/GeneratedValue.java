@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class GeneratedValue extends AppCompatActivity {
 
     @Override
@@ -43,11 +45,25 @@ public class GeneratedValue extends AppCompatActivity {
         });
 
         TextView txtFuseValue = (TextView) findViewById(R.id.txtFuseValue);
+        TextView txtFuseSum = (TextView) findViewById(R.id.txtFuseSum);
+
         txtFuseValue.setText(
             "High Fuse : " + json.getUserHFuse() + "\n" +
             "Low Fuse : " + json.getUserLFuse() + "\n" +
             "Ext. Fuse : " + json.getUserEFuse()
         );
+
+        if(!json.getUserEnableBypass()){
+            if(!json.getUserEnableSPIEN() || !json.getUserEnableRSTDISBL()){
+                txtFuseSum.setText(json.generatedFuseSummary(json.GENERATED_FUSE_WARNING));
+            }else if(!json.getUserEnableSPIEN() && !json.getUserEnableRSTDISBL()) {
+                txtFuseSum.setText(json.generatedFuseSummary(json.GENERATED_FUSE_ALERT));
+            }else{
+                txtFuseSum.setText(json.generatedFuseSummary(json.GENERATED_FUSE_OK));
+            }
+        }else{
+            txtFuseSum.setText(json.generatedFuseSummary(json.GENERATED_FUSE_OK));
+        }
     }
 
     private void backtoselectmenu(){

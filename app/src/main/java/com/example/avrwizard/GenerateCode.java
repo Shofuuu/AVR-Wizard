@@ -30,7 +30,6 @@ public class GenerateCode extends AppCompatActivity {
         Button btnReadButton = (Button) findViewById(R.id.btnCodeReadButton);
         Button btnWriteOutput = (Button) findViewById(R.id.btnCodeOutput);
         Button btnWritePWM = (Button) findViewById(R.id.btnCodePWM);
-        Button btnTimer = (Button) findViewById(R.id.btnCodeTimer);
 
         btnReadADC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,12 +67,6 @@ public class GenerateCode extends AppCompatActivity {
                 codewritepwm();
             }
         });
-        btnTimer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                codetimer();
-            }
-        });
     }
 
     private void codereadadc(){
@@ -102,11 +95,6 @@ public class GenerateCode extends AppCompatActivity {
     }
 
     private void codewritepwm(){
-        Intent intent = new Intent(this, GeneratedProgram.class);
-        startActivity(intent);
-    }
-
-    private void codetimer(){
         Intent intent = new Intent(this, GeneratedProgram.class);
         startActivity(intent);
     }

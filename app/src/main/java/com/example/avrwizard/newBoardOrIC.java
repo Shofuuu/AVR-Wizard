@@ -38,10 +38,11 @@ public class newBoardOrIC extends AppCompatActivity {
         JSONEngine json = (JSONEngine) getApplicationContext();
         json.loadDataIC();
 
+        json.setIntentSource(json.FROM_NEW_BOARD_INTENT);
+        json.setUserEnableBypass(true);
+
         List<String> list_freq = new ArrayList<>();
-        list_freq.add("1MHz Internal");
         list_freq.add("8MHz Internal");
-        list_freq.add("8MHz External");
         list_freq.add("12MHz External");
         list_freq.add("16MHz External");
 
@@ -77,9 +78,9 @@ public class newBoardOrIC extends AppCompatActivity {
 
                 txtboarddescription.setText(
                     json.getICName() + " AVR devices\n\n" +
-                    "EEPROM Size : " + json.getEeprom() + "Kb\n" +
-                    "FLASH Size : " + json.getFlash() + "Kb\n" +
-                    "SRAM Size : " + json.getSram() + "Kb\n\n" +
+                    "EEPROM Size : " + json.getEeprom() + "\n" +
+                    "FLASH Size : " + json.getFlash() + "\n" +
+                    "SRAM Size : " + json.getSram() + "\n\n" +
                     device_info
                 );
 
@@ -113,10 +114,34 @@ public class newBoardOrIC extends AppCompatActivity {
         spinnerFreq.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                spinnerFreqText = adapterView.getItemAtPosition(i).toString();
-
+                String spFreqTxt = adapterView.getItemAtPosition(i).toString();
                 JSONEngine json = (JSONEngine) getApplicationContext();
-                json.setSelectedFrequency(spinnerFreqText);
+
+                if(spFreqTxt.equals("8MHz Internal")) {
+                    json.setSelectedFrequency("8000000");
+                    json.setClockSourceExternal(false);
+
+                    if(spinnerChipText.equals("atmega328p")){
+                        json.setUserHFuse("D9");
+                        json.setUserLFuse("E2");
+                        json.setUserEFuse("FF");
+                    }else if(spinnerChipText.equals("atmega8")){
+                        json.setUserLFuse("E4");
+                        json.setUserEFuse("FF");
+                        json.setUserHFuse("CA");
+                    }else if(spinnerChipText.equals("atmega8")){
+                        json.setUserLFuse("E4");
+                        json.setUserEFuse("FF");
+                        json.setUserHFuse("CA");
+                    }
+
+                }else if(spFreqTxt.equals("12MHz External")) {
+                    json.setSelectedFrequency("12000000");
+                    json.setClockSourceExternal(true);
+                }else if(spFreqTxt.equals("16MHz External")) {
+                    json.setSelectedFrequency("16000000");
+                    json.setClockSourceExternal(true);
+                }
 
                 View decorView = getWindow().getDecorView();
                 decorView.setSystemUiVisibility(
@@ -155,8 +180,6 @@ public class newBoardOrIC extends AppCompatActivity {
     private void openegeneratedcode(){
         Intent intent = new Intent(this, GeneratedValue.class);
         JSONEngine json = (JSONEngine) getApplicationContext();
-
-        json.setIntentSource(json.FROM_NEW_BOARD_INTENT);
 
         startActivity(intent);
     }
