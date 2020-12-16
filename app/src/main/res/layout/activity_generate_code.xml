@@ -17,21 +17,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/avrwizard_flat_top" />
 
-    <Spinner
-        android:id="@+id/spinnericselect"
-        android:layout_width="338dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="60dp"
         android:text="Code Generator"
         android:textColor="@color/fgtext"
         android:textSize="34sp"
@@ -42,12 +32,11 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="335dp"
-        android:layout_height="253dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="341dp"
+        android:layout_height="281dp"
+        app:layout_constraintBottom_toTopOf="@+id/codeInformation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnericselect">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -109,12 +98,12 @@
         android:id="@+id/codeInformation"
         android:layout_width="336dp"
         android:layout_height="146dp"
-        android:layout_marginTop="40dp"
-        android:text="Code Information"
+        android:layout_marginBottom="108dp"
+        android:text="Choose which one code example you want generate"
         android:textColor="@color/fgtext"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

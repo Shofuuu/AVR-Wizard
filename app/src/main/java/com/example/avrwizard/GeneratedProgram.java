@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class GeneratedProgram extends AppCompatActivity {
 
@@ -24,6 +25,8 @@ public class GeneratedProgram extends AppCompatActivity {
             | View.SYSTEM_UI_FLAG_FULLSCREEN
         );
 
+        JSONEngine json = (JSONEngine) getApplicationContext();
+
         Button btnBack = (Button) findViewById(R.id.btnback);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +34,11 @@ public class GeneratedProgram extends AppCompatActivity {
                 backtoselectboard();
             }
         });
+        TextView codeFunction = (TextView) findViewById(R.id.codeFunction);
+        TextView codeMain = (TextView) findViewById(R.id.codeMain);
+
+        codeFunction.setText(json.getFunctionCode());
+        codeMain.setText(json.getMainCode());
     }
 
     private void backtoselectboard(){

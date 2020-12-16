@@ -242,6 +242,21 @@ public class JSONEngine extends Application {
         return message[mode];
     }
 
+    String[] source_code = new String[2];
+
+    public void setFunctionCode(String code){
+        source_code[0] = code;
+    }
+    public String getFunctionCode(){
+        return source_code[0];
+    }
+    public void setMainCode(String code){
+        source_code[1] = code;
+    }
+    public String getMainCode(){
+        return source_code[1];
+    }
+
     public void setUserHFuse(String fuse){
         user_fuse[0] = fuse;
     }
